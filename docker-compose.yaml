@@ -10,12 +10,12 @@ services:
     container_name: csgo-ds
 
     environment:
-      SERVER_HOSTNAME: "Counter-Strike: Global Offensive Dedicated Server"
-      SERVER_PASSWORD:
+      SERVER_HOSTNAME: "Monga CSGO Server"
+      SERVER_PASSWORD: Monga@@2023!
       RCON_PASSWORD: changeme
-      STEAM_ACCOUNT: changeme
-      AUTHKEY: changeme
-      SOURCEMOD_ADMINS: comma,delimited,list,of,steam,ids
+      STEAM_ACCOUNT: 1B34680B092A32902BE75DB60241EB96
+      AUTHKEY: 341DAC7FCFD0476C50B943FB02A5F147
+      SOURCEMOD_ADMINS: STEAM_1:0:123456,STEAM_1:0:654321
       IP: 0.0.0.0
       PORT: 27015
       TV_PORT: 27020
@@ -23,9 +23,9 @@ services:
       FPS_MAX: 300
       GAME_TYPE: 0
       GAME_MODE: 1
-      MAP: de_dust2
+      MAP: de_mirage
       MAPGROUP: mg_active
-      MAXPLAYERS: 12
+      MAXPLAYERS: 10
       TV_ENABLE: 1
       LAN: 0
       RETAKES: 0

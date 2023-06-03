@@ -33,8 +33,8 @@ function set_env_from_file_or_def() {
 export SERVER_HOSTNAME="${SERVER_HOSTNAME:-Counter-Strike: Global Offensive Dedicated Server}"
 set_env_from_file_or_def 'SERVER_PASSWORD'
 set_env_from_file_or_def 'RCON_PASSWORD' 'changeme'
-set_env_from_file_or_def 'STEAM_ACCOUNT' 'changeme'
-set_env_from_file_or_def 'AUTHKEY' 'changeme'
+set_env_from_file_or_def 'STEAM_ACCOUNT' '1B34680B092A32902BE75DB60241EB96'
+set_env_from_file_or_def 'AUTHKEY' '341DAC7FCFD0476C50B943FB02A5F147'
 set_env_from_file_or_def 'IP' '0.0.0.0'
 export PORT="${PORT:-27015}"
 export TV_PORT="${TV_PORT:-27020}"
