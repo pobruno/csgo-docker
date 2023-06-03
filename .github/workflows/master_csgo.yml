@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://monga.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_6dc1f701bfe8449eb01d944e765f7d75 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_2b7c55b92d2744179499be5d0b938008 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_1fd5c09be1674dc49a913fe6ecaf938e }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_df4fda07cc9e4d2891c134a250d94936 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: monga.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_6dc1f701bfe8449eb01d944e765f7d75 }}/csgo-server:${{ github.sha }}
+        tags: monga.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1fd5c09be1674dc49a913fe6ecaf938e }}/csgo-server:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'csgo'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_705793f9df39414487131b31627da006 }}
-        images: 'monga.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_6dc1f701bfe8449eb01d944e765f7d75 }}/csgo-server:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_6f3a75638e7343af9b0bae0cdebfe7f0 }}
+        images: 'monga.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1fd5c09be1674dc49a913fe6ecaf938e }}/csgo-server:${{ github.sha }}'
