@@ -39,7 +39,15 @@ RUN set -xo pipefail \
         } > ${STEAM_DIR}/autoupdate_script.txt \
       && mkdir ${CSGO_DIR} \
       && chown -R steam:steam ${STEAM_DIR} \
-      && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && ufw allow 80 \
+    && ufw allow 443 \
+    && ufw allow 27015 \
+    && ufw allow 27020 \
+    && ufw allow 27005 \
+    && ufw allow 51840 \
+    && ufw allow 51841 \
+    && ufw allow 22     
 
 ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
@@ -51,3 +59,5 @@ USER steam
 WORKDIR ${CSGO_DIR}
 VOLUME ${CSGO_DIR}
 ENTRYPOINT exec ${STEAM_DIR}/start.sh
+EXPOSE 80/tcp 443/tcp 27015/tcp 27020/tcp 27005/tcp 51840/tcp 51841/tcp 22/tcp
+EXPOSE 80/udp 443/udp 27015/udp 27020/udp 27005/udp 51840/udp 51841/udp 22/udp
